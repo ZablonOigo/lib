@@ -1,15 +1,20 @@
 {% extends "library/base.html" %}
 
-{% block content %}
-  <h1>Local Library Home</h1>
 
-  <h2>Dynamic content</h2>
-  <p>The library has the following record counts:</p>
-  <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
-  </ul>
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Local Library Home</h1>
+      <p>The library has the following record counts:</p>
+      <ul style="list-style: none;" class="list-group list-group-horizontal ">
+        <li class="list-group-item-danger p-3 mx-2 text-dark"><strong>Books:</strong> {{ num_books }}</li>
+        <li class="list-group-item-warning p-3 mx-2 text-dark"><strong>Copies:</strong> {{ num_instances }}</li>
+        <li class="list-group-item-primary p-3 mx-2 text-dark"><strong>Copies available:</strong> {{ num_instances_available }}</li>
+        <li class="list-group-item-info p-3 mx-2 text-dark"><strong>Authors:</strong> {{ num_authors }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
 {% endblock %}
 
