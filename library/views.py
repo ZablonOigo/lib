@@ -35,6 +35,7 @@ def index(request):
 
 class BookListView(generic.ListView):
     model = Book
+    paginate_by=10
     context_object_name = 'book_list' 
     queryset = Book.objects.all() 
     template_name = 'library/book_list.html'  
@@ -50,3 +51,9 @@ def detail(request,id):
     book=get_object_or_404(Book, pk=id)
     context={'book':book}
     return render(request, 'library/book_detail.html',context)
+
+
+def author_list(request,id):
+    author=get_object_or_404(Author,pk=id)
+    context={'author':author}
+    return render(request, 'library/author_list.html',context)
